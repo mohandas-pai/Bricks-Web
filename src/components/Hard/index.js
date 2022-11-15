@@ -4,7 +4,7 @@ import {MAX_EASY_GUESSES} from "../../constants/gameConstants"
 import {getGameWord} from "../Logic/gameUtils"
 import Cards from "../Card";
 
-const Easy = () => {
+const Hard = () => {
 
     const [allBricks, setAllBricks] = useState([]);
     const [brick,setBrick] = useState({
@@ -31,8 +31,6 @@ const Easy = () => {
         }
     }, [allBricks]);
 
-
-
     function handleChange(event) {
         const myWord = event.target.value;
     
@@ -42,11 +40,14 @@ const Easy = () => {
             const ogWordArray = wordToGuess.current.split('');
 
             for (let i = 0; i < 4; i++) {
+                console.log("At "+i+"myWordArray[i] = "+myWordArray[i]+" and ogWordArray[i] = "+ogWordArray[i])
                 if (myWordArray[i] === ogWordArray[i]) {
+                    console.log("Matched at "+i+" so came here")
                     gb=gb+1;
                     continue;
                 } else {
                     if ((myWord.indexOf(ogWordArray[i])) >= 0) {
+                        console.log("did not match at "+i+" so came here where myWord.indexOf(myWordArray[i]) is "+myWord.indexOf(myWordArray[i]))
                         rb=rb+1;
                         continue;
                     }
@@ -67,46 +68,36 @@ const Easy = () => {
 
     function addWord(event) {
         event.preventDefault();
-
-        if(brick.word.length===4){
-            setAllBricks(prevNotes => {
-                return [...prevNotes, brick];
-            });
-            
-            setBrick({
-                word: "",
-                green: 0,
-                red:0
-            })
-        }
-
+        setAllBricks(prevNotes => {
+            return [...prevNotes, brick];
+        });
         
+        console.log(allBricks);
     }
 
     return(
         <div className="easy-container">
             <div>
-            <div className="input-container">
                 <form>
                     <input name="word" type="text" onChange={handleChange} value={brick.word} placeholder="Enter your word"/>
-                    <button className="flat-button-send" onClick={addWord}>+</button>                   
+                    <button className="flat-button" onClick={addWord}>+</button>
+                    
+                    <div className="cards-container">
+                        <Cards/>
+                        <Cards/>
+                        <Cards/>
+                        <Cards/>
+                        <Cards/>
+                        <Cards/>
+                        <Cards/>
+                        <Cards/>
+                        <Cards/>
+                        <Cards/>
+                    </div>
+                    
                 </form>
-            </div>    
-            <div className="cards-container">
-                    {allBricks.map((brickItem,index)=>{
-                        return(
-                            <Cards
-                            key={index}
-                            id={index}
-                            word={brickItem.word}
-                            gcount={brickItem.green}
-                            rcount={brickItem.red}
-                            />
-                        )
-                    })}
-                </div>
             </div>
         </div>
     )
 }
-export default Easy;
+export default Hard;
