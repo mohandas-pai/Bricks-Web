@@ -10,6 +10,7 @@ const Home = () =>{
             <img src={BricksTxt} alt="Bricks text"/>
             <div className='game'>
             <Link to='/easy' className='flat-button'> Easy Mode</Link>
+            <Link to='/hard' className='flat-button'> Hard Mode</Link>
             </div>
         </div>
     );

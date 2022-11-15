@@ -11,11 +11,15 @@
         input[type='text']{
             width: 100%;
             border: 0;
-            background: #ffd60a;
+            background: #554e30;
+            opacity: 50%;
             height: 50px;
             font-size: 16px;
-            color: #000814;
+            color: #ffffff;
+            text-align: center;
             padding: 0 20px;
+            letter-spacing: 25px;
+            text-transform: uppercase;
             box-sizing: border-box;
         }
     
@@ -33,5 +37,44 @@
             animation: fadeIn 1s 2s backwards;
             white-space: nowrap;
         }
+    }
+
+    .answer-container{
+        position: relative;
+        margin-top: -50px;
+        h1{
+            width: 100%;
+            height: 50px;
+            font-size: 50px;
+            position: relative;
+            margin-left: 200px;
+            text-transform: uppercase;
+            color: #000814;
+            display: inline-block;
+            
+        }
+        p{
+            font-size: 20px;
+            color: #000814;
+            margin-left: 350px;
+            margin-top: -62px;
+        }
+    }
+
+    .counter-container{
+        display: block;
+        position: absolute;
+        top: 0;
+        margin-left: 900px;
+
+        .CircularProgressbar-path {
+            stroke: yellow;
+          }
+          .CircularProgressbar-trail {
+            stroke: gray;
+          }
+          .CircularProgressbar-text {
+            fill: yellow;
+          }
     }
 }

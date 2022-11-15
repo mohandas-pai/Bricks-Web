@@ -1,34 +1,80 @@
-.easy-container{
+.hard-container{
     font-size: 25px;
     width: 600px;
     position: absolute;
     left: 25%;
-    margin-top: 100px;
+    margin-top: 50px;
 
-    input[type='text']{
-        width: 100%;
-        border: 0;
-        background: #ffd60a;
-        height: 50px;
-        font-size: 16px;
-        color: #000814;
-        padding: 0 20px;
-        box-sizing: border-box;
+    .input-container{
+        
+        position: relative;
+        input[type='text']{
+            width: 100%;
+            border: 0;
+            background: #554e30;
+            opacity: 50%;
+            height: 50px;
+            font-size: 16px;
+            color: #ffffff;
+            text-align: center;
+            padding: 0 20px;
+            letter-spacing: 25px;
+            text-transform: uppercase;
+            box-sizing: border-box;
+        }
+    
+        .flat-button-send{
+            color: #ffd700;
+            position: absolute;
+            font-size: 13px;
+            background: 0 0;
+            font-weight: 400;
+            font-family: sans-serif;
+            text-decoration: none;
+            padding: 17px 20px;
+            border: 1px solid aliceblue;
+            margin-left: 50px;
+            animation: fadeIn 1s 2s backwards;
+            white-space: nowrap;
+        }
     }
 
-    .flat-button{
-        color: #ffd700;
-        font-size: 13px;
-        background: 0 0;
-        font-weight: 400;
-        letter-spacing: 4px;
-        font-family: sans-serif;
-        text-decoration: none;
-        padding: 10px 18px;
-        border: 1px solid aliceblue;
-        margin-top: -25px;
-        margin-left: 625px;
-        animation: fadeIn 1s 2s backwards;
-        white-space: nowrap;
+    .answer-container{
+        position: relative;
+        margin-top: -50px;
+        h1{
+            width: 100%;
+            height: 50px;
+            font-size: 50px;
+            position: relative;
+            margin-left: 200px;
+            text-transform: uppercase;
+            color: #000814;
+            display: inline-block;
+            
+        }
+        p{
+            font-size: 20px;
+            color: #000814;
+            margin-left: 350px;
+            margin-top: -62px;
+        }
+    }
+
+    .counter-container{
+        display: block;
+        position: absolute;
+        top: 0;
+        margin-left: 900px;
+
+        .CircularProgressbar-path {
+            stroke: yellow;
+          }
+          .CircularProgressbar-trail {
+            stroke: gray;
+          }
+          .CircularProgressbar-text {
+            fill: yellow;
+          }
     }
 }

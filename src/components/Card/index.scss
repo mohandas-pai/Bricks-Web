@@ -4,14 +4,13 @@ html{
 }
 
 body{
-    background-color: #443874;
     line-height: 1.5;
 }
 
 .card{
     display: grid;
-    background-image: linear-gradient(to right,#5b4b8d 40%, #8274A6);
-    color: #fff;
+    background-image:linear-gradient(to bottom left, rgba(255, 255, 255, 0.379), rgba(255, 255, 255, 0.097));
+    color: rgb(0, 0, 0);
     margin-top: 20px;
     max-width: 750px;
     max-height: 50px;
@@ -26,7 +25,7 @@ body{
             font-size: 35px;
             letter-spacing: 25px;
             margin-top: -2px;
-            margin-left: 25px;
+            margin-left: 65px;
             text-transform: uppercase;
         }
     }
@@ -37,28 +36,33 @@ body{
     position: relative;
 
     .green-brick-count{
-        font-size: 20px;
-        margin-top: -10px;
-        margin-left: 17px;
+        font-size: 25px;
+        margin-top: -25px;
+        margin-left: 77px;
+        color: #70e000
     }
     
     .green-brick-name{
         font-size: 8px;
         text-transform: uppercase;
-        margin-top: -35px;
+        margin-top: -48px;
+        margin-left: 58px;
+        color: #000000
     }
 
     .red-brick-count{
-        font-size: 20px;
-        margin-top: -49px;
-        margin-left: 160px;
+        font-size: 25px;
+        margin-top: -51px;
+        margin-left: 180px;
+        color: #c9184a
     }
     
     .red-brick-name{
         font-size: 8px;
         text-transform: uppercase;
-        margin-top: -35px;
-        margin-left: 150px;
+        margin-top: -48px;
+        margin-left: 167px;
+        color: #000000
     }
 }
 
