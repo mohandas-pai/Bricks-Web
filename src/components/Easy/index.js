@@ -5,6 +5,8 @@ import {getGameWord} from "../Logic/gameUtils"
 import Cards from "../Card";
 import { CircularProgressbar } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Easy = () => {
 
@@ -16,6 +18,7 @@ const Easy = () => {
     })
     const [gameOver, setGameOver] = useState(false);
     const wordToGuess = useRef('xxxx');
+    const customId = "moh-ID";
 
     useEffect(() => {
         if (gameOver === false) {
@@ -34,8 +37,6 @@ const Easy = () => {
             }
         }
     }, [allBricks]);
-
-
 
     function handleChange(event) {
         const myWord = event.target.value;
@@ -71,8 +72,51 @@ const Easy = () => {
 
     function addWord(event) {
         event.preventDefault();
+        var alphaExp = /^[a-zA-Z]+$/;
 
-        if(brick.word.length===4 && (new Set(brick.word).size === brick.word.length)){
+        if(brick.word.length!==4){
+            toast.warn('Should be a 4 letter word', {
+                position: "bottom-center",
+                toastId: customId,
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "dark",
+            });
+        }
+
+        if(new Set(brick.word).size !== brick.word.length){
+            toast.warn('Should contain unique letters', {
+                position: "bottom-center",
+                toastId: customId,
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "dark",
+            });
+        }
+
+        if(!(brick.word.match(alphaExp))){
+            toast.warn('Should contain only letters', {
+                position: "bottom-center",
+                toastId: customId,
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "dark",
+            });
+        }
+
+        if(brick.word.length===4 && (new Set(brick.word).size === brick.word.length) && (brick.word.match(alphaExp))){
             setAllBricks(prevNotes => {
                 return [...prevNotes, brick];
             });
@@ -82,6 +126,8 @@ const Easy = () => {
                 green: 0,
                 red:0
             })
+
+            
         }
 
         
@@ -92,7 +138,7 @@ const Easy = () => {
             {!gameOver && (
                 <div className="input-container">
                     <form>
-                        <input name="word" type="text" onChange={handleChange} value={brick.word} placeholder="Enter your word"/>
+                        <input autoFocus name="word" type="text" onChange={handleChange} value={brick.word} placeholder="Enter your word"/>
                         <button className="flat-button-send" onClick={addWord}>+</button>                   
                     </form>
                 </div>
@@ -119,11 +165,24 @@ const Easy = () => {
                 })}
             </div>
             
-            {!gameOver && (
+             {!gameOver && (
+                allBricks.length<6 &&(
                 <div className="counter-container" style={{ width: 150, height: 150 }}>
-                    <CircularProgressbar value={allBricks.length} maxValue={7} minValue={0} text={7-(allBricks.length)} />;
+                    <CircularProgressbar value={allBricks.length} maxValue={7} minValue={0} text={7-(allBricks.length)} />
                 </div>
+                )
             )}
+
+            {!gameOver && (
+                allBricks.length>=6 &&(
+                <div className="counter-container2" style={{ width: 150, height: 150 }}>
+                    <CircularProgressbar value={allBricks.length} maxValue={7} minValue={0} text={7-(allBricks.length)} />
+                </div>
+                )
+            )} 
+            <ToastContainer />
+            <h1 className="game-mode">EASY</h1>
+
         </div>
             
     )

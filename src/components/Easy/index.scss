@@ -15,12 +15,17 @@
             opacity: 50%;
             height: 50px;
             font-size: 16px;
-            color: #ffffff;
+            color: #ffd700;
             text-align: center;
             padding: 0 20px;
             letter-spacing: 25px;
             text-transform: uppercase;
             box-sizing: border-box;
+        }
+
+        input[type=text]:focus{
+            outline: 2px solid #ffd700;
+            opacity: 100%;
         }
     
         .flat-button-send{
@@ -36,7 +41,14 @@
             margin-left: 50px;
             animation: fadeIn 1s 2s backwards;
             white-space: nowrap;
+
+            &:hover{
+                background: #ffd700;
+                color: #000814;
+                border: 1px solid#ffd700;
+            }
         }
+        
     }
 
     .answer-container{
@@ -49,14 +61,14 @@
             position: relative;
             margin-left: 200px;
             text-transform: uppercase;
-            color: #000814;
+            color: #ffd700;
             display: inline-block;
             
         }
         p{
             font-size: 20px;
-            color: #000814;
-            margin-left: 350px;
+            color: aliceblue;
+            margin-left: 360px;
             margin-top: -62px;
         }
     }
@@ -69,12 +81,38 @@
 
         .CircularProgressbar-path {
             stroke: yellow;
-          }
-          .CircularProgressbar-trail {
+        }
+        .CircularProgressbar-trail {
             stroke: gray;
-          }
-          .CircularProgressbar-text {
+        }
+        .CircularProgressbar-text {
             fill: yellow;
-          }
+        }
+    }
+
+    .counter-container2{
+        display: block;
+        position: absolute;
+        top: 0;
+        margin-left: 900px;
+
+        .CircularProgressbar-path {
+            stroke: red;
+        }
+        .CircularProgressbar-trail {
+            stroke: gray;
+        }
+        .CircularProgressbar-text {
+            fill: red;
+        }
+    }
+
+    .game-mode{
+        display: block;
+        position: absolute;
+        margin-left: -300px;
+        top: 0;
+        letter-spacing: 10px;
+        color: #ffd700;
     }
 }

@@ -1,0 +1,91 @@
+.darkBG {
+    background-color: rgba(0, 0, 0, 0.4);
+    width: 100vw;
+    height: 200vh;
+    z-index: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+}
+
+.centered {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.modal {
+    width: 450px;
+    height: 470px;
+    background: black;
+    color: white;
+    z-index: 10;
+    border-radius: 16px;
+    box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.04);
+}
+
+.modalHeader {
+    height: 50px;
+    background: #ffd700;
+    overflow: hidden;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+}
+
+.heading {
+    margin: 0;
+    padding: 10px;
+    color: black;
+    font-weight: 500;
+    font-size: 25px;
+    text-align: center;
+}
+
+.modalContent {
+    padding: 10px;
+    font-size: 14px;
+    color:aliceblue;
+    text-align: center;
+}
+
+.final-para{
+    margin-bottom: -5px;
+}
+
+.ogWord{
+    color: #ffd700;
+    font-weight: 500;
+}
+
+.myWord{
+    color: #ffd700;
+    letter-spacing: 5px;
+}
+
+.greenBrick{
+    margin-left: 25px;
+    color: #70e000;
+}
+
+.redBrick{
+    margin-left: 25px;
+    color: #c9184a;
+}
+
+hr{
+    width: 75%;
+}
+
+.red-brick-para{
+    margin-top: 25px;
+}
+
+.greenHiglight{
+    color: #70e000;
+}
+
+.redHiglight{
+    color: #ff0048;
+}
