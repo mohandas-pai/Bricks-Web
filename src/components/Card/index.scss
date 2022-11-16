@@ -16,6 +16,7 @@ body{
     max-height: 50px;
     align-items: center;
     grid-auto-flow: column;
+    animation: bounceIn 0.5s linear both;
 
     .card-left{
         position: relative;
@@ -27,6 +28,8 @@ body{
             margin-top: -2px;
             margin-left: 65px;
             text-transform: uppercase;
+            animation: fadeInDown 0.5s linear both;
+            animation-delay: 0.5s;
         }
     }
 }
@@ -40,6 +43,8 @@ body{
         margin-top: -25px;
         margin-left: 77px;
         text-shadow: -0.35px -0.35px 0 #000, 0.35px -0.35px 0 #000, -0.35px 0.35px 0 #000, 0.35px 0.35px 0 #000;
+        animation: fadeInLeft 0.5s linear both;
+        animation-delay: 1s;
         color: #70e000
     }
     
@@ -56,6 +61,8 @@ body{
         margin-top: -51px;
         margin-left: 180px;
         text-shadow: -0.35px -0.35px 0 #000, 0.35px -0.35px 0 #000, -0.35px 0.35px 0 #000, 0.35px 0.35px 0 #000;
+        animation: fadeInLeft 0.5s linear both;
+        animation-delay: 1.5s;
         color: #c9184a
     }
     

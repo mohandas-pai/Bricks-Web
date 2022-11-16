@@ -63,6 +63,7 @@
             text-transform: uppercase;
             color: #ffd700;
             display: inline-block;
+            animation: bounceIn 0.5s linear both;
             
         }
         .side-text{
@@ -70,6 +71,8 @@
             color: aliceblue;
             margin-left: 390px;
             margin-top: -62px;
+            animation: fadeInLeft 1s linear both;
+            animation-delay: 0.5s;
         }
 
         .win-text{

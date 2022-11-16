@@ -4,6 +4,8 @@
         position: absolute;
         left: 30%;
         margin-top: 50px;
+        animation: rotateIn 1s linear both;
+        animation-delay: 0.4s;
     }
 
     .game{
