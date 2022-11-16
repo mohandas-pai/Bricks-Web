@@ -7,6 +7,8 @@ import { CircularProgressbar } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
+import {faRefresh} from '@fortawesome/free-solid-svg-icons'
 
 const Easy = () => {
 
@@ -17,9 +19,10 @@ const Easy = () => {
         red:0
     })
     const [gameOver, setGameOver] = useState(false);
+    const [gameWon, setGameWon] = useState(false);
     const wordToGuess = useRef('xxxx');
     const customId = "moh-ID";
-
+    
     useEffect(() => {
         if (gameOver === false) {
           wordToGuess.current = getGameWord();
@@ -32,6 +35,7 @@ const Easy = () => {
         if(guessLen>0){
             if (allBricks[guessLen - 1].word === wordToGuess.current) {
                 setGameOver(true);
+                setGameWon(true);
             } else if (guessLen === MAX_EASY_GUESSES) {
                 setGameOver(true);
             }
@@ -144,10 +148,19 @@ const Easy = () => {
                 </div>
             )}
             
-            {gameOver && (
+            {!gameWon && gameOver && (
                 <div className="answer-container">
+                    <p className="win-text">You Lost!</p>
                     <h1>{wordToGuess.current}</h1>
-                    <p> was the word.</p>
+                    <p className="side-text"> was the word.</p>
+                </div> 
+            )}
+
+            {gameWon && gameOver && (
+                <div className="answer-container">
+                    <p className="win-text">You Won!</p>
+                    <h1>{wordToGuess.current}</h1>
+                    <p className="side-text"> was the word.</p>
                 </div> 
             )}
 
@@ -180,6 +193,16 @@ const Easy = () => {
                 </div>
                 )
             )} 
+            
+            {gameOver && (
+                <div className="after-game">
+                    <div className="again-container">
+                        <FontAwesomeIcon className="again-button" onClick={() => window.location.reload(false)} icon = {faRefresh} color="#ffd60a"/>
+                        <p className="again-text">Play again</p>
+                    </div>
+                </div>
+            )}
+
             <ToastContainer />
             <h1 className="game-mode">EASY</h1>
 

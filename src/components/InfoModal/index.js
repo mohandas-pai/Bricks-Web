@@ -10,14 +10,13 @@ const InfoModal = ({ setIsOpen }) => {
                         <h5 className="heading">How to Play</h5>
                     </div>
                     <div className="modalContent">
-                        <p>The goal is to guess the word within 7 tries</p>
+                        <p>The goal is to guess the word within 7 tries.</p>
                         <hr></hr>
-                        <p>The word is always
-                            <ul>
-                                <li>A dictionary word</li>
-                                <li>A 4 letter word with unique letters</li>
-                            </ul>
-                        </p>
+                        <p>The word is always;</p>
+                        <ul>
+                            <li>A dictionary word</li>
+                            <li>A 4 letter word with unique letters</li>
+                        </ul>
                         <hr></hr>
                         <p className="final-para"> Assume the word is <span className="ogWord">TASK</span> then:</p><br/>
                         <span className="myWord">BARN</span><span className="greenBrick">1</span><span className="redBrick">0</span><br/>

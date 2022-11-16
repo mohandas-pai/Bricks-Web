@@ -53,4 +53,22 @@
         text-decoration: none;
         color: #ffd700;
     }
+
+    .easy-info{
+        position: absolute;
+        margin-top: 295px;
+        margin-left: 825px;
+        z-index: 99;
+        color: #ffd700;
+        font-size: 20px;
+        text-align: left;
+    }
+    .hard-info{
+        position: absolute;
+        margin-top: 375px;
+        margin-left: 825px;
+        z-index: 99;
+        color: #ffd700;
+        font-size: 20px;
+    }
 }
